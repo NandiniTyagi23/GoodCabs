@@ -40,7 +40,7 @@ SELECT
     WHEN trip_count = '10-Trips' THEN repeat_passenger_count*100/passenger ELSE '0' 
     END),2) AS 10_Trips
 FROM dim_repeat_trip_distribution td
-JOIN repeat_passenger rp
+JOIN repeat_passengers rp
      ON rp.city_id = td.city_id
 GROUP BY city_name
 ORDER BY city_name 
