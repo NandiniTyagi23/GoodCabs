@@ -26,7 +26,7 @@ CASE
 END AS performance_status,
       CONCAT(ROUND((actual_trips - total_target_trips) *100 / total_target_trips, 2), '%') AS diff_pct
 FROM targets_db.monthly_target_trips tt
-JOIN monthly_actual ma 
-     ON ma.city_id = tt.city_id
+JOIN monthly_performance mp 
+     ON mp.city_id = tt.city_id
 GROUP BY city_name, month_name 
-ORDER BY city_name, ma.date 
+ORDER BY city_name, mp.date 
